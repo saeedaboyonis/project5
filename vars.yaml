@@ -1,0 +1,4 @@
+region: eu-central-1
+image_id: ami-0767046d1677be5a0
+security_group: ansible
+instance_role: EC2

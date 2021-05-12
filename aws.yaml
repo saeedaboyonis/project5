@@ -1,0 +1,73 @@
+- hosts: localhost
+  connection: local
+  vars_files:
+   - vars.yaml
+  vars:
+   result: "{{ instance1['instances'] }}"
+  tasks:
+   - name: create a new ec2 vpc
+     ec2_vpc_net:
+      name: VPC1
+      cidr_block: 10.10.0.0/16
+      region: "{{ region }}"
+     register: vpc
+   - name: Create public subnet
+     ec2_vpc_subnet:
+      tags:
+       Name: VPC1_subnet
+      state: present
+      vpc_id: "{{ vpc['vpc']['id'] }}"
+      cidr: 10.10.1.16/28
+      region: "{{ region }}"
+     register: public_subnet
+   - name: Set up vpc internet gateway
+     ec2_vpc_igw:
+      tags:
+       Name: VPC1_igw
+      vpc_id: "{{ vpc['vpc']['id'] }}"
+      state: present
+      region: "{{ region }}"
+     register: igw
+   - name: Set up public subnet route table
+     ec2_vpc_route_table:
+      vpc_id: "{{ vpc['vpc']['id'] }}"
+      region: "{{ region }}"
+      tags:
+       Name: VPC1_Public
+      subnets:
+       - "{{ public_subnet.subnet.id }}"
+      routes:
+       - dest: 0.0.0.0/0
+         gateway_id: "{{ igw.gateway_id }}"
+   - name: create a new ec2 key pair, returns generated private key
+     amazon.aws.ec2_key:
+      name: my_keypair
+      region: "{{ region }}"
+     register:  ec2_key_result
+   - name: Save private key
+     copy: content="{{ ec2_key_result.key.private_key }}" dest="./my_keypair.pem" mode=0400
+     when: ec2_key_result.changed
+   - name: start an instance with a public IP address
+     community.aws.ec2_instance:
+      name: "fursa-compute-instance"
+      key_name: "my_keypair"
+      region: "{{ region }}"
+      vpc_subnet_id: "{{ public_subnet['subnet']['id'] }}"
+      instance_type: t2.micro
+      security_group: "{{ security_group }}"
+      network:
+       assign_public_ip: true
+      image_id: "{{ image_id }}"
+      instance_role: "{{ instance_role }}"
+      user_data: |
+                 #! /bin/bash
+                 sudo apt update -y
+                 pip install docker
+                 sudo apt install -y docker.io
+                 sudo docker run -it -p 80:80 -d nginx
+      tags:
+       Environment: Playground
+     register: instance1
+   - name: print the instance public IP address for the user
+     debug:
+      msg: "your instance public IP address is: {{ result }}" 
