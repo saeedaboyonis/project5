@@ -22,7 +22,7 @@ You should have the following items:
    **To run this project follow these instructions:**
 
 
-1- Git all the app files to a directory in your system.
+1- Git all the files to a directory in your system.
 
 
 2- Modify the file "vars.yaml" to match your AWs details.
