@@ -1,11 +1,11 @@
                                             
-                                                ######Nginx running on AWS instance created from ansible code
+                                                Nginx running on AWS instance created from ansible code
 
 
    **Prerequisites**
 
 
-You should have the following items:
+######You should have the following items:
 
 
 
