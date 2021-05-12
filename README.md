@@ -19,7 +19,7 @@ You should have the following items:
 
  
 
-   **To run this project follow these instructions:**
+   ***To run this project follow these instructions:***
 
 
 1- Git all the files to a directory in your system.
