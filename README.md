@@ -7,7 +7,7 @@
 <br/>
 You should have the following items:
 
-<br/>
+<br/><br/>
 
 **1)-** AWS account.
 
