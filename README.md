@@ -7,7 +7,7 @@
 
 You should have the following items:
 
-
+<br/>
 
 **1)-** AWS account.
 
@@ -17,10 +17,10 @@ You should have the following items:
 
 **3)-** ansible.
 
- <br/><br/>
+ <br/>
 
    ***To run this project follow these instructions:***
-
+<br/>
 
 **1)-** Git all the files to a directory in your system.
 
