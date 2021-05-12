@@ -7,7 +7,7 @@
 <br/>
 You should have the following items:
 
-
+<br/>
 
 **1)-** AWS account.
 
@@ -20,7 +20,7 @@ You should have the following items:
  <br/>
 
    ***To run this project follow these instructions:***
-<br/>
+<br/><br/>
 
 **1)-** Git all the files to a directory in your system.
 
