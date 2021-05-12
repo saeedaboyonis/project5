@@ -20,6 +20,11 @@ You should have the following items:
  
  
 
+
+
+
+
+
 **To run this project follow these instructions:**
 
 
