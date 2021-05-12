@@ -2,7 +2,7 @@
                                                 Nginx running on AWS instance created from ansible code
 
 
-  ***<u>Prerequisites</u>***
+  ***Prerequisites***
 
 <br/>
 You should have the following items:
@@ -28,7 +28,7 @@ You should have the following items:
 **2)-** Modify the file "vars.yaml" to match your AWs details.
 
 
-**3)-** Use command line to run the following command "ansible-playbook aws.yaml".
+**3)-** Use command line to run the following command `ansible-playbook aws.yaml`.
 
 
 **4)-** Wait until your AWS services are ready.
