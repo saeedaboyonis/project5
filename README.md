@@ -4,10 +4,10 @@
 
   ***Prerequisites***
 
-
+<br/>
 You should have the following items:
 
-<br/>
+
 
 **1)-** AWS account.
 
