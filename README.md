@@ -2,7 +2,7 @@
                                                 Nginx running on AWS instance created from ansible code
 
 
-    **Prerequisites**
+   **Prerequisites**
 
 
 You should have the following items:
@@ -19,7 +19,7 @@ You should have the following items:
 
  
 
-    **To run this project follow these instructions:**
+   **To run this project follow these instructions:**
 
 
 1- Git all the app files to a directory in your system.
