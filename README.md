@@ -34,10 +34,10 @@ You should have the following items:
 **4)-** Wait until your AWS services are ready.
 
 
-**5)-** In the last task you will get you instance details printed on the screen, search for 'public_ip_address' and copy it.
+**5)-** In the last task you will get you instance details printed on the screen, search for `public_ip_address` and copy it.
 
 
-**6)-** Go to you browser and navigate to public_ip_address:80
+**6)-** Go to you browser and navigate to `public_ip_address:80`
 
 
 
