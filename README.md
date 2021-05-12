@@ -18,12 +18,6 @@ You should have the following items:
 3- ansible.
 
  
- 
-
-
-
-
-
 
 **To run this project follow these instructions:**
 
