@@ -2,7 +2,7 @@
                                                 Nginx running on AWS instance created from ansible code
 
 
-  ***<u/>Prerequisites***
+  ***Prerequisites***
 
 <br/>
 You should have the following items:
